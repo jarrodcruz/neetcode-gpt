@@ -18,15 +18,15 @@ class Solution:
         zmax = np.max(z)
         sum = 0
         ans = np.zeros(len(z))
-
+        
+        # compute numerator of softmax
         for n in range(len(z)):
             stable_n = z[n] - zmax
             en = np.exp(stable_n) 
-            print(en)
             sum += en
             ans[n] = en 
 
-        print(ans)
+        # compute denominator of softmax
         for n in range(len(ans)):
             ans[n] = ans[n] / sum
         return np.round(ans, 4)
