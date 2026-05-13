@@ -19,6 +19,6 @@ class Solution:
         #pass
 
         # THOUGHT PROCESS
-        # mse = mean(pred = truth)
+        # mse = mean((pred - truth )^2)
         mse = np.mean((model_prediction - ground_truth)**2)
         return round(mse,5)
