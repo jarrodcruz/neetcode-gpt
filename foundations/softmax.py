@@ -12,16 +12,16 @@ class Solution:
         #pass
 
         # THOUGHT PROCESS
-        # take e^n for n within z
-        # sum these and divide each e^n by it
-        # numerical stability
+        # numerical stability - subtract max of z from all n within z
+        # take e^n for stable n within z
+        # sum these and divide each n within ans by it
         zmax = np.max(z)
         sum = 0
         ans = np.zeros(len(z))
 
         for n in range(len(z)):
-            stable = z[n] - zmax
-            en = np.exp(stable) 
+            stable_n = z[n] - zmax
+            en = np.exp(stable_n) 
             print(en)
             sum += en
             ans[n] = en 
