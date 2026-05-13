@@ -28,7 +28,7 @@ class Solution:
         #pass
 
         # THOUGHT PROCESS
-        # multi class , iterate y_pred properly (class based)
+        # multi class , iterate y_pred properly (class based - axis = 1)
         # numerator first: true * ln(pred_prob)
         eps = 1e-7
         
