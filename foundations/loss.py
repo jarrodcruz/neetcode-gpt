@@ -12,7 +12,7 @@ class Solution:
         #pass
 
         # THOUGHT PROCESS
-        # numerator first sum( (true * ln(pred_prob) + (1-true) * ln(1-pred_prob)) )
+        # numerator first: sum( (true * ln(pred_prob) + (1-true) * ln(1-pred_prob)) )
         # add in small error to avoid log(0)
         eps = 1e-7
         numerator = np.sum(y_true * np.log(y_pred + eps) + (1-y_true) * np.log(1-y_pred+eps))
@@ -29,8 +29,9 @@ class Solution:
 
         # THOUGHT PROCESS
         # multi class , iterate y_pred properly (class based)
+        # numerator first: true * ln(pred_prob)
         eps = 1e-7
+        
         numerator = np.sum(y_true * np.log(y_pred + eps))
-
         ans = numerator * (-1/len(y_true))
         return round(ans,4)
