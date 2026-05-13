@@ -11,7 +11,6 @@ class Solution:
         # THOUGHT PROCESS
         # prediction: yhat = x . w (dot product)
         yhat = np.dot(X, weights)
-        print(yhat)
         return np.round(yhat, 5)
     def get_error(self, model_prediction: NDArray[np.float64], ground_truth: NDArray[np.float64]) -> float:
         # Compute mean squared error between predictions and ground truth
